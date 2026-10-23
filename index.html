@@ -4,43 +4,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praktik PaaS GitHub</title>
+  <title>Cloud Computing Dashboard</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #eaf2ff;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 22px 8%;
+      background: #111c33;
+      border-bottom: 1px solid #334155;
+    }
+
+    header h2 {
+      color: #38bdf8;
+    }
+
+    .hero {
+      padding: 65px 8% 45px;
       text-align: center;
-      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 7px 15px;
+      border-radius: 20px;
+      background: #064e3b;
+      color: #6ee7b7;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: white;
-      max-width: 550px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px #0002;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 25px;
     }
 
-    button {
-      background: #1664d9;
-      color: white;
-      padding: 12px 20px;
+    .card .icon {
+      font-size: 32px;
+    }
+
+    .card h3 {
+      margin: 12px 0 8px;
+      color: #7dd3fc;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .button {
+      margin-top: 18px;
+      padding: 11px 18px;
       border: none;
       border-radius: 8px;
+      background: #0284c7;
+      color: white;
       cursor: pointer;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #0369a1;
+    }
+
+    #hasil {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 10px;
+      background: #111c33;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 50px;
+      color: #94a3b8;
+      border-top: 1px solid #334155;
     }
   </style>
 </head>
-<body>
-  <div class="card">
-    <h1>Praktik PaaS Berhasil!</h1>
-    <p>Website ini dibuat dan dipublikasikan melalui GitHub Pages.</p>
-    <p>Nama proyek: praktik-paas</p>
 
-    <button onclick="alert('Website berjalan dengan baik!')">
-      Uji Website
-    </button>
-  </div>
+<body>
+  <header>
+    <h2>☁ CloudPlatform</h2>
+  </header>
+
+  <section class="hero">
+    <h1>Cloud Computing Dashboard</h1>
+    <p>
+      Demonstrasi penggunaan layanan cloud untuk menjalankan
+      dan mempublikasikan aplikasi web melalui platform PaaS.
+    </p>
+    <div class="status">● Website berhasil dimuat</div>
+  </section>
+
+  <main class="container">
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🖥️</div>
+        <h3>IaaS</h3>
+        <p>Infrastruktur komputasi, jaringan, dan penyimpanan
+        yang dapat dikelola sesuai kebutuhan.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>PaaS</h3>
+        <p>Platform untuk membangun dan men-deploy aplikasi
+        tanpa mengelola server secara langsung.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>SaaS</h3>
+        <p>Aplikasi siap pakai yang dapat diakses melalui
+        internet menggunakan browser.</p>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top: 22px;">
+      <h3>Uji Sistem</h3>
+      <p>
+        Tekan tombol berikut untuk menguji interaksi
+        JavaScript pada website.
+      </p>
+
+      <button class="button" onclick="ujiSistem()">
+        Jalankan Pengujian
+      </button>
+
+      <div id="hasil"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Praktik PaaS | GitHub Pages</p>
+    <p>Proyek pembelajaran Cloud Computing</p>
+  </footer>
+
+  <script>
+    function ujiSistem() {
+      const hasil = document.getElementById("hasil");
+
+      hasil.style.display = "block";
+      hasil.innerHTML =
+        "<strong>Pengujian berhasil!</strong><br>" +
+        "HTML: Berjalan<br>" +
+        "CSS: Berjalan<br>" +
+        "JavaScript: Berjalan<br>" +
+        "Status: Website berfungsi dengan baik.";
+    }
+  </script>
 </body>
 </html>
